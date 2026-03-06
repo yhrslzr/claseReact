@@ -1,0 +1,245 @@
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+  display: grid;
+  gap: 48px;
+  gap: 48px;
+  position: relative;
+}
+
+.app-hero {
+  display: grid;
+  gap: 16px;
+  position: relative;
+  animation: floatIn 0.9s ease both;
+}
+
+.app-badge {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(233, 242, 255, 0.65);
+}
+
+.app-subtitle {
+  max-width: 540px;
+  font-size: 1.05rem;
+  color: rgba(233, 242, 255, 0.7);
+  margin: 0;
+}
+
+.app-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.app-card {
+  padding: 22px 22px 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(160deg, rgba(17, 33, 57, 0.85), rgba(10, 23, 40, 0.95));
+  box-shadow: 0 18px 45px rgba(2, 6, 14, 0.45);
+  display: grid;
+  gap: 14px;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  min-height: 150px;
+  position: relative;
+  overflow: hidden;
+  animation: riseIn 0.7s ease both;
+}
+
+.app-card:nth-child(2) {
+  animation-delay: 0.05s;
+}
+
+.app-card:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.app-card:nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+.app-card:nth-child(5) {
+  animation-delay: 0.2s;
+}
+
+.app-card:nth-child(6) {
+  animation-delay: 0.25s;
+}
+
+.app-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(100, 180, 255, 0.2), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(120, 185, 255, 0.4);
+  box-shadow: 0 28px 60px rgba(2, 6, 14, 0.55);
+}
+
+.app-card:hover::after {
+  opacity: 1;
+}
+
+.app-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: rgba(233, 242, 255, 0.65);
+  position: relative;
+  z-index: 1;
+}
+
+.app-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5dd5ff;
+  box-shadow: 0 0 12px rgba(93, 213, 255, 0.9);
+}
+
+.app-card-title {
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.app-card-cta {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(93, 213, 255, 0.9);
+  position: relative;
+  z-index: 1;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.nav-menu {
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu h1 {
+  margin: 0 0 30px 0;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #34495e;
+  border-radius: 5px;
+}
+
+.nav-menu button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  transition: color 0.3s;
+}
+
+.nav-menu button:hover {
+  color: #3498db;
+}
+
+.nav-menu button.active {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.date {
+  display: block;
+  font-size: 0.75rem;
+  color: #95a5a6;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.component-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  justify-items: center;
+  align-items: start;
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #7f8c8d;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 48px 18px 70px;
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
