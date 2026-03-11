@@ -8,5 +8,6 @@
 // Re-exportamos el type Pokemon desde Types.ts para que esté disponible centralmente
 export type { 
     Pokemon, // Type que define la estructura de cada pokémon en la aplicación
-    CharacterRM // Type que define la estructura de cada personaje de Rick and Morty en la aplicación
+    CharacterRM, // Type que define la estructura de cada personaje de Rick and Morty en la aplicación
+    Currency // Type que define la estructura de cada moneda en la aplicación de conversión de divisas
 } from "./Types";

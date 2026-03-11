@@ -17,5 +17,7 @@ export type {
     propsTitle,  // Props requeridas por el componente Title
     propsCardPkm,   // Props requeridas por el componente Card
     propsCardRM,   // Props requeridas por el componente CardRM
-    propsSearchPkm   // Props requeridas por el componente SearchPkm
+    propsSearchPkm,   // Props requeridas por el componente SearchPkm
+    propsConverterCurrency,  // Props requeridas por el componente InputCurrency
+    propsDropdownCurrency  // Props requeridas por el componente DropdownCurrency
 } from "./Interfaces";

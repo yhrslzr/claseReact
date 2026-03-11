@@ -13,10 +13,16 @@
 export { default as Title } from "./title/Title";
 
 // Exportamos el componente PkmCard que muestra una tarjeta
-export { default as CardPkm } from "./buttonCard/card/CardPkm";
+export { default as CardPkm } from "./card/CardPkm";
 
 // Exportamos el componente RMCard que muestra una tarjeta
-export { default as CardRM } from "./buttonCard/card/CardRM";
+export { default as CardRM } from "./card/CardRM";
 
 // Exportamos el componente Search que muestra un campo de búsqueda
 export { default as SearchPkm } from "./search/SearchPkm";
+
+// Exportamos el componente InputCurrency que muestra un campo de búsqueda
+export { default as InputCurrency } from "./input/InputCurrency";
+
+// Exportamos el componente DropdownCurrency que muestra un campo de búsqueda
+export { default as DropdownCurrency } from "./button/DropdownCurrency";

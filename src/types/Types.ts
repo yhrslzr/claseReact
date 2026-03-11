@@ -25,3 +25,10 @@ export type CharacterRM = {
     estado: string; // Estado del personaje (ej: "Vivo", "Muerto", "Desconocido")
     imagen: string; // URL de la imagen del personaje
 }
+
+export type Currency = {
+    id: number; // Identificador único de la moneda
+    nombre: string; // Nombre de la moneda (ej: "Euro")
+    simbolo: string; // Simbolo de la moneda (ej: "€", "$")
+    valor: number; // Valor de la moneda en relación a la moneda base (ej: 1.0 para Euro si es la base)
+}

@@ -1,14 +1,15 @@
 // ================================================
-// ARCHIVO DE EXPORTACIÓN CENTRALIZADO: usePokemon.index.ts
+// ARCHIVO DE EXPORTACIÓN CENTRALIZADO: use.index.ts
 // ================================================
-// Este archivo centraliza la exportación del hook personalizado usePokemon
-// Permite importar el hook desde un único punto en lugar de relaciones complejas
+// Este archivo centraliza la exportación de todos los hooks personalizados
+// Permite importar los hooks desde un único punto en lugar de rutas complejas
 // 
 // Beneficios:
-// - Importar es más simple: import { usePokemon } from './hooks/usePokemon.index'
-// - En lugar de: import { default as usePokemon } from './hooks/usePokemon'
+// - Importar es más simple: import { usePokemon } from './hooks/use.index'
 // - Facilita agregar más hooks en el futuro de forma centralizada
+// - Mantiene organizada la estructura de carpetas
 
-// Exportamos el hook personalizado usePokemon que gestiona la obtención de pokemons de la PokeAPI
+// Exportamos los hooks personalizados
 export { default as usePokemon } from "./usePokemon";
 export { default as useCharacterRM } from "./useRMCharacter";
+export { default as useConverterCurrency } from "./useConverterCurrency";

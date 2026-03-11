@@ -22,7 +22,7 @@ import {
 // Este hook retorna Pokémon (array) y evolucionar (función) desde usePokemon.index.ts
 import { 
   usePokemon,
-  useCharacterRM
+  useCharacterRM,
 } from './hooks/use.index';
 
 // ================================================
@@ -33,8 +33,9 @@ import {
 // '02041' = Componente Card con lista de Pokémon
 // '02042' = Componente Card con lista de Personajes de Rick and Morty
 // '03051' = Componente Search con funcionalidad de búsqueda
+// '03111' = Componente Currency con funcionalidad de conversión de divisas
 // '' | null = Sin componente seleccionado (estado inicial)
-type ComponentType = '01301' | '02041' | '02251' | '03051' | '' | null;
+type ComponentType = '01301' | '02041' | '02251' | '03051' | '03111' | '' | null;
 
 // ================================================
 // FUNCIÓN COMPONENTE: App (Componente Principal)
@@ -71,6 +72,8 @@ export default function App() {
     { id: '02251', name: 'Card Rick & Morty', date: '20/febrero/2026 - 25/febrero/2026' },
     // Componente Search: campo de búsqueda para filtrar Pokémon por nombre
     { id: '03051', name: 'Search Pokémon', date: '5/marzo/2026 - 10/marzo/2026' },
+    // Componente Currency: conversor de divisas con dropdown para seleccionar monedas
+    { id: '03111', name: 'Currency Converter', date: '11/marzo/2026 - 15/marzo/2026' }
   ];
 
   // ================================================
@@ -173,6 +176,16 @@ export default function App() {
                 onEvolucionar={() => evolucionar(pkm.id)} // Función callback que evoluciona este Pokémon
               />
             ))}
+
+          </div>
+        )}
+
+        {/* Si el componente seleccionado es InputCurrency (03111), mostramos el campo de conversión de divisas */}
+        {activeComponent === '03111' && (
+          <div className="currency-container">
+            {/* Campo de entrada */}
+            {/* Campo de salida */}
+            {/* Dropdown para seleccionar moneda */}
 
           </div>
         )}
