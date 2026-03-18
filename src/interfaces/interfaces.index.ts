@@ -19,5 +19,10 @@ export type {
     propsCardRM,   // Props requeridas por el componente CardRM
     propsSearchPkm,   // Props requeridas por el componente SearchPkm
     propsConverterCurrency,  // Props requeridas por el componente InputCurrency
-    propsDropdownCurrency  // Props requeridas por el componente DropdownCurrency
+    propsDropdownCurrency,  // Props requeridas por el componente DropdownCurrency
+    propsFormIMC, // Props requeridas por el componente FormIMC
+    propsHeaderShop, // Props requeridas por el componente ShopHeader
+    propsNavbarShop, // Props requeridas por el componente ShopNavbar
+    propsShop, // Props requeridas por el componente ShopFake
+    propsFooterShop // Props requeridas por el componente ShopFooter
 } from "./Interfaces";

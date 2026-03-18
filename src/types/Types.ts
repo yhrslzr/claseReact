@@ -32,3 +32,18 @@ export type Currency = {
     simbolo: string; // Simbolo de la moneda (ej: "€", "$")
     valor: number; // Valor de la moneda en relación a la moneda base (ej: 1.0 para Euro si es la base)
 }
+
+export type IMC = {
+    id: number; // Identificador único del registro de IMC
+    peso: number; // Peso en kilogramos
+    altura: number; // Altura en metros
+    imc: number; // Valor calculado del IMC
+}
+
+export type Product = {
+    id: number; // Identificador único del producto
+    nombre: string; // Nombre del producto
+    desc: string; // Descripción del producto
+    precio: number; // Precio del producto
+    imagen: string; // URL de la imagen del producto
+}

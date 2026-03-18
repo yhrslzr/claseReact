@@ -26,3 +26,12 @@ export { default as InputCurrency } from "./input/InputCurrency";
 
 // Exportamos el componente DropdownCurrency que muestra un campo de búsqueda
 export { default as DropdownCurrency } from "./button/DropdownCurrency";
+
+// Exportamos el componente FormIMC que muestra un formulario para calcular el IMC
+export { default as FormIMC } from "./form/FormIMC"
+
+// Exportamos los componente de ShopFake
+export { default as ShopFake } from "./shop/ShopFake"
+export { default as ShopHeader } from "./shop/ShopHeader"
+export { default as ShopNavbar } from "./shop/ShopNavbar"
+export { default as ShopFooter } from "./shop/ShopFooter"

@@ -15,14 +15,22 @@ import {
   Title, 
   CardPkm, 
   CardRM,
-  SearchPkm
+  SearchPkm,
+  InputCurrency,
+  DropdownCurrency,
+  FormIMC,
+  ShopFake,
+
 } from './components/components.index';
 
-// Importamos el hook personalizado usePokemon que gestiona la obtención de datos de la PokeAPI
-// Este hook retorna Pokémon (array) y evolucionar (función) desde usePokemon.index.ts
+// Importamos los hooks personalizados
 import { 
   usePokemon,
   useCharacterRM,
+  useConverterCurrency,
+  useConverterIMC,
+  useShopProducts,
+
 } from './hooks/use.index';
 
 // ================================================
@@ -34,8 +42,10 @@ import {
 // '02042' = Componente Card con lista de Personajes de Rick and Morty
 // '03051' = Componente Search con funcionalidad de búsqueda
 // '03111' = Componente Currency con funcionalidad de conversión de divisas
+// '03121' = Componente IMC con funcionalidad de cálculo
+// '03181' = Componente ShopFake con funcionalidad de tienda falsa
 // '' | null = Sin componente seleccionado (estado inicial)
-type ComponentType = '01301' | '02041' | '02251' | '03051' | '03111' | '' | null;
+type ComponentType = '01301' | '02041' | '02251' | '03051' | '03111' | '03121' | '03181' | '' | null;
 
 // ================================================
 // FUNCIÓN COMPONENTE: App (Componente Principal)
@@ -50,13 +60,29 @@ export default function App() {
   const [activeComponent, setActiveComponent] = useState<ComponentType>(null);
   
   // ================================================
-  // DATOS: Obtención de Pokémon desde el hook personalizado
+  // ESTADO: Control del convertidor de divisas
   // ================================================
-  // Pokémon es un array de type Pokémon[] que contiene todos los Pokémon traídos de la PokeAPI
-  // evolucionar es una función que alterna el estado de un Pokémon entre forma normal y shiny
-  // Ambos vienen del hook usePokemon() que definimos anteriormente
+  const [monedaOrigen, setMonedaOrigen] = useState("EUR"); // Moneda origen seleccionada
+  const [monedaDestino, setMonedaDestino] = useState("USD"); // Moneda destino seleccionada
+  const [valorIngresado, setValorIngresado] = useState(0); // Valor ingresado por el usuario
+  const [valorConvertido, setValorConvertido] = useState(0); // Valor después de la conversión
+  
+  // ================================================
+  // DATOS: Obtención desde el hook personalizado
+  // ================================================
+
+  // Usamos el hook usePokemon para obtener el listado de Pokémon, la función de evolución y el filtro
   const { pokemon, evolucionar, setFiltro } = usePokemon();
+
+  // Usamos el hook useCharacterRM para obtener el listado de Personajes de Rick and Morty
   const { characterRM } = useCharacterRM();
+
+  // Usamos el hook useConverterCurrency para obtener las funciones de conversión
+  const { convertir } = useConverterCurrency();
+
+  // Usamos el hook useConverterIMC para obtener los datos y funciones relacionados con el cálculo de IMC
+  const { peso, estatura, setEstatura, setPeso, imc } = useConverterIMC();
+
 
   // ================================================
   // DATOS: Array de componentes disponibles para navegación
@@ -73,7 +99,11 @@ export default function App() {
     // Componente Search: campo de búsqueda para filtrar Pokémon por nombre
     { id: '03051', name: 'Search Pokémon', date: '5/marzo/2026 - 10/marzo/2026' },
     // Componente Currency: conversor de divisas con dropdown para seleccionar monedas
-    { id: '03111', name: 'Currency Converter', date: '11/marzo/2026 - 15/marzo/2026' }
+    { id: '03111', name: 'Currency Converter', date: '11/marzo/2026 - 12/marzo/2026' },
+    // Componente IMC: formulario para calcular el Índice de Masa Corporal (IMC) basado en peso y altura
+    { id: '03121', name: 'IMC Calculator', date: '13/marzo/2026 - 14/marzo/2026' }
+    // Componente ShopFake: tienda falsa con productos obtenidos de una API
+    ,{ id: '03181', name: 'Shop Fake', date: '18/marzo/2026 - 20/marzo/2026' }
   ];
 
   // ================================================
@@ -183,10 +213,81 @@ export default function App() {
         {/* Si el componente seleccionado es InputCurrency (03111), mostramos el campo de conversión de divisas */}
         {activeComponent === '03111' && (
           <div className="currency-container">
-            {/* Campo de entrada */}
-            {/* Campo de salida */}
-            {/* Dropdown para seleccionar moneda */}
+            {/* Contenedor para los dos dropdowns de selección de monedas */}
+            <div className="currency-selectors">
+              {/* Dropdown para seleccionar moneda origen */}
+              <div className="currency-dropdown-group">
+                <label htmlFor="currency-origin-select">Moneda Origen:</label>
+                <DropdownCurrency
+                  monedaSeleccionada={monedaOrigen}
+                  onMonedaSeleccionada={(moneda) => {
+                    setMonedaOrigen(moneda);
+                    // Recalcula automáticamente cuando cambia la moneda origen
+                    const resultado = convertir(valorIngresado, moneda, monedaDestino);
+                    setValorConvertido(resultado);
+                  }}
+                />
+              </div>
 
+              {/* Dropdown para seleccionar moneda destino */}
+              <div className="currency-dropdown-group">
+                <label htmlFor="currency-destination-select">Moneda Destino:</label>
+                <DropdownCurrency
+                  monedaSeleccionada={monedaDestino}
+                  onMonedaSeleccionada={(moneda) => {
+                    setMonedaDestino(moneda);
+                    // Recalcula automáticamente cuando cambia la moneda destino
+                    const resultado = convertir(valorIngresado, monedaOrigen, moneda);
+                    setValorConvertido(resultado);
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Campo de entrada para la moneda origen */}
+            <div className="currency-input-group">
+              <label>Cantidad en {monedaOrigen}:</label>
+              <InputCurrency
+                valor={valorIngresado}
+                monedaOrigen={monedaOrigen}
+                onValorConvertido={(valor) => {
+                  setValorIngresado(valor);
+                  // Calcula el valor convertido automáticamente
+                  const resultado = convertir(valor, monedaOrigen, monedaDestino);
+                  setValorConvertido(resultado);
+                }}
+              />
+            </div>
+
+            {/* Campo de salida con el valor convertido */}
+            <div className="currency-output-group">
+              <label>Cantidad en {monedaDestino}:</label>
+              <InputCurrency
+                valor={valorConvertido}
+                monedaOrigen={monedaDestino}
+                onValorConvertido={() => {}} // No hacer nada, es un campo de solo lectura
+              />
+            </div>
+          </div>
+        )}
+
+        {/* Si el componente seleccionado es FormIMC (03121), mostramos el formulario para calcular el IMC */}
+        {activeComponent === '03121' && (
+          <div className="imc-container">
+            <FormIMC 
+            peso={peso}
+            estatura={estatura}
+            cambioPeso={setPeso}
+            cambioEstatura={setEstatura}
+            imc = {imc}
+            />
+          </div>
+        )}
+
+        {/* Si el componente seleccionado es ShopFake (03181), mostramos la tienda falsa */}
+        {activeComponent === '03181' && (
+          <div className="shop-container">
+            <ShopFake />
           </div>
         )}
 
