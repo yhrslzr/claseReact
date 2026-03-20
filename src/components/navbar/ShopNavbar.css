@@ -1,0 +1,31 @@
+.shop-navbar {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 5px;
+}
+
+.shop-navbar-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+  margin: 0px;
+}
+
+.shop-navbar-item button {
+  border: 1px solid #0078d7;
+  background: #fff;
+  color: #0078d7;
+  border-radius: 6px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.shop-navbar-item button:hover {
+  background: #0078d7;
+  color: #fff;
+}

@@ -1,0 +1,31 @@
+.shop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  border:lightgray solid 2px;
+  border-radius: 5px;
+}
+
+.shop-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.shop-title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: rgb(51, 52, 54);
+}
+
+.shop-carrito-button {
+    background-color: #0078d7;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+}

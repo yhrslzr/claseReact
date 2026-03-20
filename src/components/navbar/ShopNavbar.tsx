@@ -6,7 +6,7 @@ import type {
 
 export const ShopNavbar = ({categorias, onCategorias}: propsNavbarShop) => {
     return (
-        <nav className="shop-navbar">
+        <nav className="shop-categories">
             <ul className="shop-navbar-list">
                 {categorias.map((category) => (
                     <li key={category} className="shop-navbar-item">

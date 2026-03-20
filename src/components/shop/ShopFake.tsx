@@ -5,14 +5,18 @@ import type {
 } from "../../interfaces/interfaces.index"
 
 export const ShopFake = ({productos}: propsShop) => {
+    if (!productos.length) {
+        return <div className="shop-fake">Cargando productos...</div>
+    }
+
     return (
-        <div className="shop-fake">
-            {productos.map((product) => (
-                <div className="shop-fake-card" key={product.id}>
-                    <img src={product.imagen} alt={product.nombre} />
-                    <h3>{product.nombre}</h3>
-                    <p>{product.desc}</p>
-                    <p>${product.precio}</p>
+        <div className="shop-fake-grid">
+            {productos.map((prod) => (
+                <div key={prod.id} className="shop-fake-item">
+                    <h2>{prod.nombre}</h2>
+                    <img src={prod.imagen} alt={prod.nombre} />
+                    <p className="shop-fake-price">Precio: ${prod.precio}</p>
+                    <p className="shop-fake-desc">Descripción: {prod.desc}</p>
                 </div>
             ))}
         </div>

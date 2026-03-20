@@ -96,6 +96,11 @@ export interface propsNavbarShop {
     // Función que se ejecuta cuando el usuario hace click en una categoría, pasando el nombre de la categoría para que el componente padre actualice el estado
 }
 
+export interface propsSearchShop {
+    alEscribir: (valor: string) => void;
+    // Función que se ejecuta cada vez que el usuario escribe en el campo de búsqueda
+}
+
 export interface propsShop {
     productos: Product[];
     // Lista de productos que se muestran en el componente ShopFake

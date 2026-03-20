@@ -1,0 +1,41 @@
+.shop-fake-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    margin-top: 16px;
+}
+
+.shop-fake-item {
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    color: rgb(51, 52, 54);
+}
+
+.shop-fake-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+}
+
+.shop-fake-price {
+  font-weight: 700;
+  color: #2a7b2a;
+}
+
+.shop-fake-desc {
+  color: #444;
+  font-size: 0.9rem;
+  max-height: 100px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}

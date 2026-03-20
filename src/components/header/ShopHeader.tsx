@@ -11,7 +11,7 @@ export const ShopHeader = ({logo, marca, onCarrito}: propsHeaderShop) => {
             </div>
             <h1 className="shop-title">{marca}</h1>
             <button className="shop-carrito-button" onClick={onCarrito}>
-                Carrito
+                Carrito :3
             </button>
         </header>
     )

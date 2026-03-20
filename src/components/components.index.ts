@@ -32,6 +32,7 @@ export { default as FormIMC } from "./form/FormIMC"
 
 // Exportamos los componente de ShopFake
 export { default as ShopFake } from "./shop/ShopFake"
-export { default as ShopHeader } from "./shop/ShopHeader"
-export { default as ShopNavbar } from "./shop/ShopNavbar"
-export { default as ShopFooter } from "./shop/ShopFooter"
+export { default as ShopHeader } from "./header/ShopHeader"
+export { default as ShopNavbar } from "./navbar/ShopNavbar"
+export { default as SearchShop } from "./search/SearcShop"
+export { default as ShopFooter } from "./footer/ShopFooter"

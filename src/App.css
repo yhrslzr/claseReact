@@ -24,13 +24,13 @@
   letter-spacing: 0.2em;
   font-size: 0.72rem;
   font-weight: 600;
-  color: rgba(233, 242, 255, 0.65);
+  color: rgba(0, 0, 0, 0.65);
 }
 
 .app-subtitle {
   max-width: 540px;
   font-size: 1.05rem;
-  color: rgba(233, 242, 255, 0.7);
+  color: rgb(51, 52, 54);
   margin: 0;
 }
 
@@ -99,7 +99,7 @@
   align-items: center;
   gap: 10px;
   font-size: 0.85rem;
-  color: rgba(233, 242, 255, 0.65);
+  color: rgb(51, 52, 54);
   position: relative;
   z-index: 1;
 }
@@ -110,6 +110,14 @@
   border-radius: 50%;
   background: #5dd5ff;
   box-shadow: 0 0 12px rgba(93, 213, 255, 0.9);
+}
+
+input{
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: auto;
+  height: 0px;
 }
 
 .app-card-title {

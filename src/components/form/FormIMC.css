@@ -1,0 +1,54 @@
+.form-imc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 280px;
+    padding: 1rem;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+    color:black ;
+}
+
+.form-imc label {
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+.form-imc input {
+    padding: 0.45rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.imc-result {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    font-weight: 500;
+}
+.imc-status {
+  font-weight: 700;
+}
+
+.imc-status-sin-datos {
+  color: grey;
+}
+
+.imc-status-bajo-peso {
+  color: orange;
+}
+
+.imc-status-normal {
+  color: green;
+}
+
+.imc-status-sobrepeso {
+  color: goldenrod;
+}
+
+.imc-status-obesidad {
+  color: red;
+}

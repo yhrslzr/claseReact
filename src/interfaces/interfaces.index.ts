@@ -23,6 +23,7 @@ export type {
     propsFormIMC, // Props requeridas por el componente FormIMC
     propsHeaderShop, // Props requeridas por el componente ShopHeader
     propsNavbarShop, // Props requeridas por el componente ShopNavbar
+    propsSearchShop, // Props requeridas por el componente SearchShop
     propsShop, // Props requeridas por el componente ShopFake
-    propsFooterShop // Props requeridas por el componente ShopFooter
+    propsFooterShop, // Props requeridas por el componente ShopFooter
 } from "./Interfaces";

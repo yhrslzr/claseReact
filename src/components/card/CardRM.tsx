@@ -1,7 +1,7 @@
 import './CardRM.css';
 import type {
     propsCardRM,   // Props requeridas por el componente Card
-} from "../../../interfaces/interfaces.index" // Importamos las interfaces para las props (si es necesario)
+} from "../../interfaces/interfaces.index" // Importamos las interfaces para las props (si es necesario)
 
 const CardRM = ({ nombre, img, especie, estado }: propsCardRM) => {
     return (

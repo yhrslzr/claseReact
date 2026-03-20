@@ -46,4 +46,5 @@ export type Product = {
     desc: string; // Descripción del producto
     precio: number; // Precio del producto
     imagen: string; // URL de la imagen del producto
+    category?: string; // Categoría opcional para filtro de la tienda
 }

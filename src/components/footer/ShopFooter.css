@@ -1,0 +1,16 @@
+.shop-footer {
+  border-top: 1px solid #ccc;
+  padding: 10px 14px;
+  text-align: center;
+  margin-top: 16px;
+  background: #fff;
+}
+
+.shop-footer button {
+  border: none;
+  background-color: #25d366;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}

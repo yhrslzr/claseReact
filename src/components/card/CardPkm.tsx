@@ -8,7 +8,7 @@
 import "./CardPkm.css";
 import type {
     propsCardPkm,   // Props requeridas por el componente Card
-} from "../../../interfaces/interfaces.index" // Importamos las interfaces para las props (si es necesario)
+} from "../../interfaces/interfaces.index" // Importamos las interfaces para las props (si es necesario)
 
 // ================================================
 // FUNCIÓN COMPONENTE: PkmCard

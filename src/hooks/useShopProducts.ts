@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { Product } from "../types/types.index";
 
 // ================================================
 // INTERFAZ para tipar los datos que viene de la API
@@ -15,7 +16,8 @@ interface FakestoreApiData {
 }
 
 const useShopProducts = () => {
-    const [products, setProducts] = useState<FakestoreApiData[]>([])
+    const [productos, setProductos] = useState<Product[]>([])
+    const [filtroProducto, setFiltroProducto] = useState<string>("")
 
     useEffect(() => {
         const obtenerProductos = async () => {
@@ -24,7 +26,15 @@ const useShopProducts = () => {
                 // Retorna una lista de productos
                 const respuesta = await fetch("https://fakestoreapi.com/products")
                 const datos: FakestoreApiData[] = await respuesta.json()
-                setProducts(datos)
+                const listadoReal: Product[] = datos.map((p: FakestoreApiData) => ({
+                    id: p.id,
+                    nombre: p.title,
+                    desc: p.description,
+                    precio: p.price,
+                    imagen: p.image,
+                    category: p.category
+                }))
+                setProductos(listadoReal)
             } catch (error) {
                 console.log("Error al obtener productos:", error)
             }
@@ -32,7 +42,14 @@ const useShopProducts = () => {
         obtenerProductos()
     }, [])
 
-    return products
+    const productosFiltrados = productos.filter((p) =>
+        p.nombre.toLowerCase().includes(filtroProducto.toLowerCase())
+    )
+
+    return {
+    productos: productosFiltrados,
+    setFiltroProducto
+    }
 }
 
 export default useShopProducts

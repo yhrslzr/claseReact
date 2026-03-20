@@ -20,6 +20,10 @@ import {
   DropdownCurrency,
   FormIMC,
   ShopFake,
+  ShopHeader,
+  ShopNavbar,
+  SearchShop,
+  ShopFooter,
 
 } from './components/components.index';
 
@@ -45,7 +49,16 @@ import {
 // '03121' = Componente IMC con funcionalidad de cálculo
 // '03181' = Componente ShopFake con funcionalidad de tienda falsa
 // '' | null = Sin componente seleccionado (estado inicial)
-type ComponentType = '01301' | '02041' | '02251' | '03051' | '03111' | '03121' | '03181' | '' | null;
+type ComponentType = 
+'01301' | 
+'02041' | 
+'02251' | 
+'03051' | 
+'03111' | 
+'03121' | 
+'03181' | 
+'' | 
+null;
 
 // ================================================
 // FUNCIÓN COMPONENTE: App (Componente Principal)
@@ -83,6 +96,31 @@ export default function App() {
   // Usamos el hook useConverterIMC para obtener los datos y funciones relacionados con el cálculo de IMC
   const { peso, estatura, setEstatura, setPeso, imc } = useConverterIMC();
 
+  // Usamos el hook useShopProducts para obtener los datos relacionados con la tienda falsa
+  const { productos: productosArray, setFiltroProducto } = useShopProducts();
+  const [categoriaActiva, setCategoriaActiva] = useState<string | null>(null);
+  const [carritoCount, setCarritoCount] = useState(0);
+
+  const categorias = Array.from(
+    new Set(productosArray.map((p) => p.category).filter((c): c is string => Boolean(c)))
+  );
+
+  const productosFiltrados = categoriaActiva
+    ? productosArray.filter((p) => p.category === categoriaActiva)
+    : productosArray;
+
+  const onCategorias = (categoria: string) => {
+    setCategoriaActiva(categoriaActiva === categoria ? null : categoria);
+  };
+
+  const onCarrito = () => {
+    setCarritoCount((p) => p + 1);
+    window.alert("Producto agregado al carrito");
+  };
+
+  const onBotonWP = () => {
+    window.alert("Abrir WhatsApp");
+  };
 
   // ================================================
   // DATOS: Array de componentes disponibles para navegación
@@ -287,7 +325,27 @@ export default function App() {
         {/* Si el componente seleccionado es ShopFake (03181), mostramos la tienda falsa */}
         {activeComponent === '03181' && (
           <div className="shop-container">
-            <ShopFake />
+            <ShopHeader 
+              logo="https://mario.wiki.gallery/images/3/31/Green_Star_Artwork_-_Super_Mario_3D_World.png" 
+              marca="Tienda 'La Falsedad'" 
+              onCarrito={onCarrito}
+            />
+
+            {/* Navbar debajo del header: barra de búsqueda y categorías */}
+            <div className="shop-navbar">
+              <SearchShop
+                alEscribir={setFiltroProducto}
+              />
+
+              <ShopNavbar 
+                categorias={categorias}
+                onCategorias={onCategorias}
+              />
+            </div>
+
+            <p>Carrito: {carritoCount} ítem(s)</p>
+            <ShopFake productos={productosFiltrados} />
+            <ShopFooter info="2026 - Mi tienda" onBotonWP={onBotonWP} />
           </div>
         )}
 
