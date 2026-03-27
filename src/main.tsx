@@ -10,7 +10,8 @@ import { StrictMode } from 'react'
 // createRoot es la forma moderna de inicializar una app React (React 18+)
 import { createRoot } from 'react-dom/client'
 
-// Importamos los estilos globales de CSS que aplican a toda la aplicación
+// Importamos los estilos globales de Bootstrap y CSS que aplican a toda la aplicación
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 
 // Importamos el componente principal App que contiene toda la lógica de la aplicación
