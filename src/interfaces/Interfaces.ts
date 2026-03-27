@@ -112,3 +112,8 @@ export interface propsFooterShop {
     onBotonWP: () => void;
     // Función que se ejecuta cuando el usuario hace click en el botón de WhatsApp, para mostrar el estado del contacto o realizar alguna acción relacionada
 }
+
+export interface propsCardCocktail {
+    nombre: string; // Nombre del cóctel a mostrar en la tarjeta
+    img: string; // URL de la imagen del cóctel
+}

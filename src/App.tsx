@@ -24,6 +24,7 @@ import {
   ShopNavbar,
   SearchShop,
   ShopFooter,
+  CardCocktail,
 
 } from './components/components.index';
 
@@ -34,6 +35,7 @@ import {
   useConverterCurrency,
   useConverterIMC,
   useShopProducts,
+  useMenuCocktail,
 
 } from './hooks/use.index';
 
@@ -57,6 +59,7 @@ type ComponentType =
 '03111' | 
 '03121' | 
 '03181' | 
+'03261' | 
 '' | 
 null;
 
@@ -122,6 +125,9 @@ export default function App() {
     window.alert("Abrir WhatsApp");
   };
 
+  // Usamos el hook useMenuCocktail para obtener el listado de cocktails
+  const cocktails = useMenuCocktail();
+
   // ================================================
   // DATOS: Array de componentes disponibles para navegación
   // ================================================
@@ -139,9 +145,11 @@ export default function App() {
     // Componente Currency: conversor de divisas con dropdown para seleccionar monedas
     { id: '03111', name: 'Currency Converter', date: '11/marzo/2026 - 12/marzo/2026' },
     // Componente IMC: formulario para calcular el Índice de Masa Corporal (IMC) basado en peso y altura
-    { id: '03121', name: 'IMC Calculator', date: '13/marzo/2026 - 14/marzo/2026' }
+    { id: '03121', name: 'IMC Calculator', date: '13/marzo/2026 - 14/marzo/2026' },
     // Componente ShopFake: tienda falsa con productos obtenidos de una API
-    ,{ id: '03181', name: 'Shop Fake', date: '18/marzo/2026 - 20/marzo/2026' }
+    { id: '03181', name: 'Shop Fake', date: '18/marzo/2026 - 20/marzo/2026' },
+    // Componente CardCocktail: galería de tarjetas de cócteles obtenidos de una API
+    { id: '03261', name: 'Card Cocktail', date: '26/marzo/2026 - 27/marzo/2026' },
   ];
 
   // ================================================
@@ -346,6 +354,21 @@ export default function App() {
             <p>Carrito: {carritoCount} ítem(s)</p>
             <ShopFake productos={productosFiltrados} />
             <ShopFooter info="2026 - Mi tienda" onBotonWP={onBotonWP} />
+          </div>
+        )}
+
+        {/* Si el componente seleccionado es CardCocktail (03261), mostramos el componente CardCocktail */}
+        {activeComponent === '03261' && (
+          <div className="component-grid">
+            {
+              cocktails.map((c) => (
+                <CardCocktail 
+                  key={c.id}
+                  nombre={c.nombre}
+                  img={c.imagen}
+                />
+              ))
+            }
           </div>
         )}
 

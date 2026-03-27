@@ -36,3 +36,6 @@ export { default as ShopHeader } from "./header/ShopHeader"
 export { default as ShopNavbar } from "./navbar/ShopNavbar"
 export { default as SearchShop } from "./search/SearcShop"
 export { default as ShopFooter } from "./footer/ShopFooter"
+
+// Exportamos el componente CardCocktail
+export { default as CardCocktail } from "./card/CardCocktail"

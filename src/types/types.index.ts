@@ -11,5 +11,6 @@ export type {
     CharacterRM, // Type que define la estructura de cada personaje de Rick and Morty en la aplicación
     Currency, // Type que define la estructura de cada moneda en la aplicación de conversión de divisas
     IMC, // Type que define la estructura de cada IMC
-    Product // Type que define la estructura de cada producto en la aplicación
+    Product, // Type que define la estructura de cada producto en la aplicación
+    Cocktail, // Type que define la estructura de cada cóctel en la aplicación
 } from "./Types";

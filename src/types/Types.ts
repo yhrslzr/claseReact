@@ -48,3 +48,10 @@ export type Product = {
     imagen: string; // URL de la imagen del producto
     category?: string; // Categoría opcional para filtro de la tienda
 }
+
+export type Cocktail = {
+    id: number; // Identificador único del cóctel
+    nombre: string; // Nombre del cóctel
+    imagen: string; // URL de la imagen del cóctel
+    codigo: string; // ID del cóctel (ej: "12034")
+}

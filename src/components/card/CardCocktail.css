@@ -1,0 +1,22 @@
+.card-v1 {
+    margin: 30px;
+    background-color: cadetblue;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background-color:darkslateblue;
+    text-align: center;
+    align-content: center;
+    width: 350px;
+    height: 350px;
+
+}
+
+.card-v1 img {
+    max-width: 190px;
+    max-height: 200px;
+    border-radius: 10px;
+}
