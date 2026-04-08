@@ -1,4 +1,4 @@
-import "./ShopHeader.css"
+import "./HeaderShop.css"
 import type { 
     propsHeaderShop
 } from "../../interfaces/interfaces.index"

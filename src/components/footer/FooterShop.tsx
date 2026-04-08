@@ -1,4 +1,4 @@
-import "./ShopFooter.css"
+import "./FooterShop.css"
 
 import type {
     propsFooterShop

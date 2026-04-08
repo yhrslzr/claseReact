@@ -1,4 +1,4 @@
-import "./ShopNavbar.css"
+import "./NavbarShop.css"
 
 import type {
     propsNavbarShop
