@@ -101,7 +101,7 @@ export interface propsSearchShop {
     // Función que se ejecuta cada vez que el usuario escribe en el campo de búsqueda
 }
 
-export interface propsShop {
+export interface propsCardShop {
     productos: Product[];
     // Lista de productos que se muestran en el componente ShopFake
 }

@@ -31,11 +31,11 @@ export { default as DropdownCurrency } from "./button/DropdownCurrency";
 export { default as FormIMC } from "./form/FormIMC"
 
 // Exportamos los componente de ShopFake
-export { default as ShopFake } from "./shop/ShopFake"
+export { default as ShopFake } from "./card/CardShop"
 export { default as ShopHeader } from "./header/ShopHeader"
-export { default as ShopNavbar } from "./navbar/ShopNavbar"
-export { default as SearchShop } from "./search/SearcShop"
-export { default as ShopFooter } from "./footer/ShopFooter"
+export { default as ShopNavbar } from "./navbar/NavbarShop"
+export { default as SearchShop } from "./search/SearchShop"
+export { default as ShopFooter } from "./footer/FooterShop"
 
 // Exportamos el componente CardCocktail
 export { default as CardCocktail } from "./card/CardCocktail"

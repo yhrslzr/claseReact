@@ -9,6 +9,9 @@ import './App.css';
 // useState es un hook de React que permite agregar estado a funciones componentes
 import { useState } from 'react';
 
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 // Importamos los componentes desde el archivo index de componentes
 // Estos componentes están exportados centralmente en components.index.ts
 import { 
@@ -25,7 +28,6 @@ import {
   SearchShop,
   ShopFooter,
   CardCocktail,
-
 } from './components/components.index';
 
 // Importamos los hooks personalizados

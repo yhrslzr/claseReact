@@ -1,10 +1,10 @@
-import "./ShopFake.css"
+import "./CardShop.css"
 
 import type {
-    propsShop
+    propsCardShop
 } from "../../interfaces/interfaces.index"
 
-export const ShopFake = ({productos}: propsShop) => {
+export const ShopFake = ({productos}: propsCardShop) => {
     if (!productos.length) {
         return <div className="shop-fake">Cargando productos...</div>
     }

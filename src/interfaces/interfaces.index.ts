@@ -24,7 +24,7 @@ export type {
     propsHeaderShop, // Props requeridas por el componente ShopHeader
     propsNavbarShop, // Props requeridas por el componente ShopNavbar
     propsSearchShop, // Props requeridas por el componente SearchShop
-    propsShop, // Props requeridas por el componente ShopFake
+    propsCardShop, // Props requeridas por el componente CardShop
     propsFooterShop, // Props requeridas por el componente ShopFooter
     propsCardCocktail, // Props requeridas por el componente CardCocktail
 } from "./Interfaces";
