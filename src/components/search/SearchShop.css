@@ -1,8 +1,16 @@
-.search {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-radius: 5px;
-    width: 25%;
-    height: 30px;
+/* 
+SearchShop.css - Estilos personalizados para el componente SearchShop
+
+Nota: Los estilos han sido reemplazados por clases de Bootstrap.
+Bootstrap's form-control maneja todos los estilos del input.
+
+Personalizaciones posibles:
+.custom-search .form-control {
+    border-radius: 25px;  Input más redondeado 
+    border: 2px solid #007bff;  Borde más grueso 
 }
+
+.custom-search .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);  Sombra de foco personalizada 
+}
+*/

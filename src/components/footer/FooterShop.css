@@ -1,16 +1,14 @@
-.shop-footer {
-  border-top: 1px solid #ccc;
-  padding: 10px 14px;
-  text-align: center;
-  margin-top: 16px;
-  background: #fff;
+/* 
+FooterShop.css - Estilos personalizados para el componente FooterShop
+
+Nota: Los estilos han sido reemplazados por clases de Bootstrap.
+Si necesitas personalizaciones específicas, puedes agregarlas aquí.
+
+Ejemplos de personalización:
+.shop-footer-custom {
+background: linear-gradient(45deg, #f8f9fa, #e9ecef);
 }
 
-.shop-footer button {
-  border: none;
-  background-color: #25d366;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-}
+.shop-footer-custom .btn {
+border-radius: 25px; Botones más redondeados
+*/

@@ -334,7 +334,12 @@ export default function App() {
 
         {/* Si el componente seleccionado es ShopFake (03181), mostramos la tienda falsa */}
         {activeComponent === '03181' && (
-          <div className="shop-container">
+          <div className="container-fluid py-4">
+            {/* 
+            Bootstrap class "container-fluid": Contenedor que ocupa todo el ancho disponible.
+            Bootstrap class "py-4": Padding vertical de 1.5rem para espaciado interno.
+            Esto crea un layout de página completo para la tienda.
+            */}
             <ShopHeader 
               logo="https://mario.wiki.gallery/images/3/31/Green_Star_Artwork_-_Super_Mario_3D_World.png" 
               marca="Tienda 'La Falsedad'" 
@@ -342,18 +347,40 @@ export default function App() {
             />
 
             {/* Navbar debajo del header: barra de búsqueda y categorías */}
-            <div className="shop-navbar">
-              <SearchShop
-                alEscribir={setFiltroProducto}
-              />
-
-              <ShopNavbar 
-                categorias={categorias}
-                onCategorias={onCategorias}
-              />
+            <div className="row mb-4">
+              {/* 
+              Bootstrap class "row": Fila para organizar elementos horizontalmente.
+              Bootstrap class "mb-4": Margen bottom de 1.5rem.
+              Las filas de Bootstrap permiten layouts responsivos.
+              */}
+              <div className="col-md-8">
+                {/* 
+                Bootstrap class "col-md-8": En pantallas medianas+, ocupa 8/12 del ancho.
+                Esto da más espacio a la búsqueda en pantallas grandes.
+                */}
+                <SearchShop
+                  alEscribir={setFiltroProducto}
+                />
+              </div>
+              <div className="col-md-4">
+                {/* 
+                Bootstrap class "col-md-4": En pantallas medianas+, ocupa 4/12 del ancho.
+                El navbar de categorías ocupa menos espacio.
+                */}
+                <ShopNavbar 
+                  categorias={categorias}
+                  onCategorias={onCategorias}
+                />
+              </div>
             </div>
 
-            <p>Carrito: {carritoCount} ítem(s)</p>
+            <p className="text-center mb-3">
+              {/* 
+              Bootstrap class "text-center": Centra el texto.
+              Bootstrap class "mb-3": Margen bottom pequeño.
+              */}
+              Carrito: {carritoCount} ítem(s)
+            </p>
             <ShopFake productos={productosFiltrados} />
             <ShopFooter info="2026 - Mi tienda" onBotonWP={onBotonWP} />
           </div>

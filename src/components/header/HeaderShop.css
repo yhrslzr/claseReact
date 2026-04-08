@@ -1,31 +1,14 @@
-.shop-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 14px;
-  border-bottom: 1px solid #ccc;
-  background: #fff;
-  border:lightgray solid 2px;
-  border-radius: 5px;
-}
+/* 
+HeaderShop.css - Estilos personalizados para el componente HeaderShop
 
-.shop-logo img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
+Nota: Los estilos han sido reemplazados por clases de Bootstrap.
+Bootstrap maneja el layout con flexbox y utilities.
 
-.shop-title {
-    margin: 0;
-    font-size: 1.2rem;
-    color: rgb(51, 52, 54);
-}
+Personalizaciones posibles:
+.shop-header-custom {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
-.shop-carrito-button {
-    background-color: #0078d7;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 12px;
-    cursor: pointer;
-}
+.shop-header-custom .btn {
+    border-radius: 20px;
+}*/
+

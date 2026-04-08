@@ -1,31 +1,15 @@
-.shop-navbar {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: space-between;
-  margin: 5px;
-  padding: 5px;
+/* 
+NavbarShop.css - Estilos personalizados para el componente NavbarShop
+
+Nota: Los estilos han sido reemplazados por clases de Bootstrap.
+Bootstrap maneja botones, flexbox y espaciado con utilities.
+
+Personalizaciones posibles:
+.shop-navbar-custom .btn {
+    transition: all 0.3s ease; Transiciones suaves 
 }
 
-.shop-navbar-list {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  list-style: none;
-  align-items: center;
-  margin: 0px;
+.shop-navbar-custom .btn:hover {
+    transform: translateY(-2px);  Efecto hover sutil 
 }
-
-.shop-navbar-item button {
-  border: 1px solid #0078d7;
-  background: #fff;
-  color: #0078d7;
-  border-radius: 6px;
-  padding: 5px;
-  cursor: pointer;
-}
-
-.shop-navbar-item button:hover {
-  background: #0078d7;
-  color: #fff;
-}
+*/
