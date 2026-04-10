@@ -46,12 +46,9 @@ const useShopProducts = () => {
         p.nombre.toLowerCase().includes(filtroProducto.toLowerCase())
     )
 
-    const productosCategorias = categorias=="all" ? 
-    productos : productos.filter((p) => p.category === categorias)
-
     return {
-    productos: productosFiltrados || productosCategorias,
-    setFiltroProducto
+        productos: productosFiltrados,
+        setFiltroProducto
     }
 }
 
