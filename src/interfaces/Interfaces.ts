@@ -117,3 +117,9 @@ export interface propsCardCocktail {
     nombre: string; // Nombre del cóctel a mostrar en la tarjeta
     img: string; // URL de la imagen del cóctel
 }
+
+export interface propsSupabaseUser {
+    id: number;
+    nombre: string;
+    telefono: string;
+}

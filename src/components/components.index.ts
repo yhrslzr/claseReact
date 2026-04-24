@@ -39,3 +39,7 @@ export { default as ShopFooter } from "./footer/FooterShop"
 
 // Exportamos el componente CardCocktail
 export { default as CardCocktail } from "./card/CardCocktail"
+
+// Supabase
+export { default as Formulario } from "./supabase/Formulario"
+export { default as TableList } from "./supabase/TableList"

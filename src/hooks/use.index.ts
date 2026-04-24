@@ -16,3 +16,4 @@ export { default as useConverterCurrency } from "./useConverterCurrency";
 export { default as useConverterIMC } from "./useConverterIMC";
 export { default as useShopProducts } from "./useShopProducts";
 export { default as useMenuCocktail } from "./useMenuCocktail";
+export { default as useDatos } from "./useDatos";

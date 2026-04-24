@@ -28,6 +28,9 @@ import {
   SearchShop,
   ShopFooter,
   CardCocktail,
+  Formulario,
+  TableList,
+  
 } from './components/components.index';
 
 // Importamos los hooks personalizados
@@ -38,6 +41,7 @@ import {
   useConverterIMC,
   useShopProducts,
   useMenuCocktail,
+  useDatos,
 
 } from './hooks/use.index';
 
@@ -62,6 +66,7 @@ type ComponentType =
 '03121' | 
 '03181' | 
 '03261' | 
+'04161' |
 '' | 
 null;
 
@@ -130,6 +135,13 @@ export default function App() {
   // Usamos el hook useMenuCocktail para obtener el listado de cocktails
   const cocktails = useMenuCocktail();
 
+  // Usamos el hook y useEffect de useDatos para obtener los datos relacionados con Supabase
+  const { datos, insertar, actualizar, eliminar } = useDatos()
+  
+  // Estado para el dato a editar en Supabase
+  const [datoEditar, setDatoEditar] = useState<Usuario | null>(null);
+  
+
   // ================================================
   // DATOS: Array de componentes disponibles para navegación
   // ================================================
@@ -152,6 +164,8 @@ export default function App() {
     { id: '03181', name: 'Shop Fake', date: '18/marzo/2026 - 20/marzo/2026' },
     // Componente CardCocktail: galería de tarjetas de cócteles obtenidos de una API
     { id: '03261', name: 'Card Cocktail', date: '26/marzo/2026 - 27/marzo/2026' },
+    // Componente Supabase: formulario para insertar/actualizar datos y tabla para mostrar datos de Supabase
+    { id: '04161', name: 'Supabase', date: '16/abril/2026 - 24/abril/2026' },
   ];
 
   // ================================================
@@ -214,7 +228,6 @@ export default function App() {
         )}
 
         {/* Si el componente seleccionado es CardRM (02251), mostramos la lista de personajes de Rick and Morty */}
-
         {activeComponent === '02251' && (
           <div className="component-grid">
             {characterRM.map((rimo: typeof characterRM[0]) =>(
@@ -398,6 +411,44 @@ export default function App() {
                 />
               ))
             }
+          </div>
+        )}
+
+        {/* Si el componente seleccionado es Supabase (04161), mostramos el formulario y la tabla */}
+        {activeComponent === '04161' && (
+          <div className="supabase-container">
+            <Formulario 
+              insertar={insertar}
+              actualizar={actualizar}
+              datoEditar={datoEditar}
+              setDatoEditar={setDatoEditar}
+            />
+            <table className="supabase-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Teléfono</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {datos.map((dato) => (
+                  <TableList
+                    key={dato.id}
+                    id={dato.id}
+                    nombre={dato.nombre}
+                    telefono={dato.telefono}
+                    onEditar={() => {
+                      setDatoEditar(dato);
+                    }}
+                    onEliminar={() => {
+                      eliminar(dato.id);
+                    }}
+                  />
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
 

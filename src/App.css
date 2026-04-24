@@ -251,3 +251,86 @@ input{
     transform: translateY(0) scale(1);
   }
 }
+
+/* Estilos para Supabase */
+.supabase-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.supabase-formulario {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.supabase-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.supabase-formulario input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.supabase-formulario button {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.supabase-formulario button:hover {
+  background-color: #2980b9;
+}
+
+.supabase-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.supabase-table th, .supabase-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.supabase-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.supabase-table button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.supabase-table button:first-child {
+  background-color: #f39c12;
+  color: white;
+}
+
+.supabase-table button:first-child:hover {
+  background-color: #e67e22;
+}
+
+.supabase-table button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.supabase-table button:last-child:hover {
+  background-color: #c0392b;
+}
