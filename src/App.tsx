@@ -30,8 +30,8 @@ import {
   CardCocktail,
   Formulario,
   TableList,
-  
 } from './components/components.index';
+
 
 // Importamos los hooks personalizados
 import { 
@@ -139,7 +139,7 @@ export default function App() {
   const { datos, insertar, actualizar, eliminar } = useDatos()
   
   // Estado para el dato a editar en Supabase
-  const [datoEditar, setDatoEditar] = useState<Usuario | null>(null);
+  const [datoEditar, setDatoEditar] = useState<User | null>(null);
   
 
   // ================================================

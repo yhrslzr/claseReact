@@ -55,3 +55,9 @@ export type Cocktail = {
     imagen: string; // URL de la imagen del cóctel
     codigo: string; // ID del cóctel (ej: "12034")
 }
+
+export interface User {
+    id: number;
+    nombre: string;
+    telefono: string;
+}

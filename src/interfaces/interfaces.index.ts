@@ -27,5 +27,4 @@ export type {
     propsCardShop, // Props requeridas por el componente CardShop
     propsFooterShop, // Props requeridas por el componente ShopFooter
     propsCardCocktail, // Props requeridas por el componente CardCocktail
-    propsSupabaseUser, // Props requeridas para manejar datos de usuario en Supabase
 } from "./Interfaces";

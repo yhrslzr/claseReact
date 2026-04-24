@@ -13,4 +13,5 @@ export type {
     IMC, // Type que define la estructura de cada IMC
     Product, // Type que define la estructura de cada producto en la aplicación
     Cocktail, // Type que define la estructura de cada cóctel en la aplicación
+    User, // Type que define la estructura de cada usuario en la aplicación de Supabase
 } from "./Types";

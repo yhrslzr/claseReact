@@ -1,9 +1,9 @@
 import { supabase } from "../utils/supabase"
 import { useState, useEffect } from "react"
-import { Usuario } from "../interfaces/Interfaces"
+
 
 function useDatos() {
-    const [datos, setDatos] = useState<Usuario[]>([])
+    const [datos, setDatos] = useState<User[]>([])
 
     const traer = async()=>{
         const { data } = await supabase.from("usuario").select("*")
